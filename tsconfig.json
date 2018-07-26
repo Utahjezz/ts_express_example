@@ -1,17 +1,19 @@
 {
     "compilerOptions": {
       "target": "es6",
-      "lib": ["es6"],
+      "lib": ["es2015"],
       "outDir": "build",
       "moduleResolution": "node",
       "experimentalDecorators": true,
-      "emitDecoratorMetadata": true
+      "emitDecoratorMetadata": true,
+      "module": "commonjs",
+      "allowJs": true
     },
     "exclude": [
       "./node_modules",
       "./build"
     ],
     "include": [
-        "src/**/*.ts"
+      "src/**/*.ts"
     ]
   }
