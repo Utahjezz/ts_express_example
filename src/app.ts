@@ -5,6 +5,7 @@ import {Container} from 'typedi';
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import {SampleController} from './controllers/SampleController';
+import { LoggerInMiddleware, LoggerOutMiddleware } from './middlewares/LoggerMiddleware';
 import * as typeorm from 'typeorm';
 import {Sample} from './model/Sample'
 
@@ -27,6 +28,7 @@ let app = express();
 //app.use(bodyParser.json);
 //app.use(bodyParser.urlencoded({extended: false}));
 routingControllers.useExpressServer(app, {
-    controllers: [SampleController]
+    controllers: [SampleController],
+    middlewares: [LoggerInMiddleware, LoggerOutMiddleware]
 });
 export default app;

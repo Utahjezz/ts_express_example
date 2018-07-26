@@ -15,14 +15,14 @@ export class SampleController {
     public async getSample(@Param("text") text: string, @Res() response: Response) : Promise<Response> {
         console.log("get");
         const res = await this.sampleService.get(text);
-        return response.send(res);
+        return response.json(res);
     }
 
     @Get("create")
     public createSample(@Req() request: Request, @Res() response: Response) : Response {
         console.log("creating new sample ");
         const res = this.sampleService.putSample("prova", "text");
-        return response.send(res);
+        return response.json(res);
     }
 
 }

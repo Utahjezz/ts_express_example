@@ -22,7 +22,7 @@ export class SampleService {
         }
     }
 
-    public putSample(text: string, extra: string) : Sample {
+    public putSample(text: string, extra?: string) : Sample {
         let sample = new Sample();
         sample.text = text;
         sample.extra = extra;
